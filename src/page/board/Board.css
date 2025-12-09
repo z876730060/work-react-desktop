@@ -1,0 +1,22 @@
+.board-container {
+  padding: 24px;
+}
+
+.statistic-card {
+  text-align: center;
+}
+
+.chart-container {
+  margin-bottom: 24px;
+}
+
+.progress-item {
+  margin-bottom: 16px;
+}
+
+.three-d-container {
+  height: 300px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
