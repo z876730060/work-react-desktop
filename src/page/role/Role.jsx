@@ -56,6 +56,10 @@ export default function Role() {
             return Promise.resolve();
         },
     }, {
+        title: '备注',
+        dataIndex: 'comment',
+        key: 'comment'
+    }, {
             title: '更新时间',
             dataIndex: 'UpdatedAt',
             key: 'UpdatedAt',

@@ -58,6 +58,12 @@ export default function AddRole() {
             <Form.Item name="name" label="角色名称" rules={[{ required: true, message: '请输入角色名称' }]}>
                 <Input />
             </Form.Item>
+            <Form.Item
+                name='comment'
+                label='备注'
+            >
+                <Input />
+            </Form.Item>
             <Form.Item name="menuPermission" label="菜单权限">
                 <Tree 
                     checkable

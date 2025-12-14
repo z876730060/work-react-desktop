@@ -22,6 +22,7 @@ export default function EditRole() {
             ID: id,
             name: values.name,
             menuPermission: selectedKeys,
+            comment: values.comment,
         }).then(res => {
             if (res.code === 200) {
                 message.success('更新成功');
@@ -71,6 +72,12 @@ export default function EditRole() {
                 name='name'
                 label='角色名称'
                 rules={[{ required: true, message: '请输入角色名称' }]}
+            >
+                <Input />
+            </Form.Item>
+            <Form.Item
+                name='comment'
+                label='备注'
             >
                 <Input />
             </Form.Item>
