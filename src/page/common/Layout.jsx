@@ -1,4 +1,4 @@
-import { Layout, Breadcrumb, Row, Col, Button } from 'antd';
+import {Layout, Breadcrumb, Row, Col, Button, Avatar} from 'antd';
 import './layout.css';
 import TopMenu from './TopMenu';
 import { useLocation, useNavigate } from 'react-router';
@@ -50,8 +50,10 @@ function MyLayout() {
     <Header>
       <div className="logo" />
       <Row>
-        <Col span={22}><TopMenu /></Col>
-        <Col span={2}>{showExitBtn && <Button type="link" onClick={handleExit} >退出登录</Button>}</Col>
+        <Col span={20}><TopMenu /></Col>
+        <Col span={2}><Avatar style={{ backgroundColor: '#1677ff' }} size={40}>User</Avatar>{showExitBtn &&
+            <Button type="link" onClick={handleExit} >退出登录</Button>
+        }</Col>
       </Row>
     </Header>
     <Content style={{ padding: '0' }}>

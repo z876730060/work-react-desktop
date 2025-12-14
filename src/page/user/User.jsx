@@ -1,6 +1,6 @@
 import { getUserListApi, delUserApi } from '@/api/user';
 import FormTable from '@/components/FormTable';
-import { Button, Divider, Popconfirm, message } from 'antd';
+import {Button, Divider, Popconfirm, message, Avatar} from 'antd';
 import { useNavigate } from 'react-router';
 
 export default function User() {
@@ -44,6 +44,26 @@ export default function User() {
             }
             return Promise.resolve();
         },
+    },
+    {
+        title: '头像',
+        dataIndex: 'pic',
+        key: 'pic',
+        render: (text, record) => {
+            if (text) {
+                return (
+                    <>
+                        <Avatar size={40} src={text}></Avatar>
+                    </>
+                )
+            }
+
+            return (
+                <>
+                    <Avatar style={{ backgroundColor: '#1677ff' }} size={40}>{record.fullname}</Avatar>
+                </>
+            )
+        }
     },
     {
         title: '姓名',
@@ -131,6 +151,8 @@ export default function User() {
                 <Button type="link" ghost onClick={() => navigate(`/user/edit?id=${record.ID}`)}>编辑</Button>
                 <Divider type="vertical" />
                 <Button type="link" ghost onClick={() => navigate(`/user/role?id=${record.ID}`)}>角色</Button>
+                <Divider type="vertical" />
+                <Button type="link" ghost>上传头像</Button>
                 <Divider type="vertical" />
                 <Popconfirm
                     title="删除用户"
