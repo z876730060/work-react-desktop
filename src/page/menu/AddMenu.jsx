@@ -67,6 +67,9 @@ export default function AddMenu() {
                 <Form.Item name="orderId" label="排序">
                     <InputNumber type="number" />
                 </Form.Item>
+                <Form.Item name="hidden" label="隐藏">
+                    <Switch />
+                </Form.Item>
                 <Form.Item name="parentKey" label="父菜单Key">
                     <Input />
                 </Form.Item>

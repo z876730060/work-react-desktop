@@ -6,7 +6,6 @@ import { Outlet } from 'react-router';
 const { Header, Content, Footer } = Layout;
 import { getBreadcrumbApi } from "@/api/menu";
 import { useState, useEffect } from 'react';
-import { healthApi } from '../../api/health';
 
 function MyLayout() {
   const local = useLocation();
@@ -26,14 +25,9 @@ function MyLayout() {
       const res = await getBreadcrumbApi(path);
       setBreadcrumb(res.data);
     } catch (error) {
-      console.error('Failed to fetch breadcrumb data:', error);
-      try {
-        await healthApi();
-        navigate("/login")
-      } catch (error) {
-        console.error('Failed to fetch health data:', error);
-        navigate("/500")
-      }
+      console.warn('Failed to fetch breadcrumb data:', error);
+      // 不中断页面渲染，只是不显示面包屑
+      setBreadcrumb([]);
     }
   };
   
@@ -44,6 +38,10 @@ function MyLayout() {
     navigate("/login")
   }
 
+  const toMe = () => {
+      navigate("/me")
+  }
+
   return (
     <>
     <Layout className="layout">
@@ -51,7 +49,7 @@ function MyLayout() {
       <div className="logo" />
       <Row>
         <Col span={20}><TopMenu /></Col>
-        <Col span={2}><Avatar style={{ backgroundColor: '#1677ff' }} size={40}>User</Avatar>{showExitBtn &&
+        <Col span={2}><Avatar style={{ backgroundColor: '#1677ff' }} size={40} onClick={toMe}>User</Avatar>{showExitBtn &&
             <Button type="link" onClick={handleExit} >退出登录</Button>
         }</Col>
       </Row>

@@ -90,6 +90,17 @@ function Menu() {
             key: 'orderId',
         },
         {
+            title: '隐藏',
+            dataIndex: 'hidden',
+            key: 'hidden',
+            render: (text) => {
+                if (text) {
+                    return '是'
+                }
+                return '否'
+            }
+        },
+        {
             title: '更新时间',
             dataIndex: 'UpdatedAt',
             key: 'UpdatedAt',

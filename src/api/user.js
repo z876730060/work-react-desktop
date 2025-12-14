@@ -27,3 +27,7 @@ export function bindRoleApi(data) {
 export function getRoleApi(id) {
     return axiosInstance.get(`/user/role/${id}`);
 }
+
+export function meApi() {
+    return axiosInstance.get("/user/me");
+}
