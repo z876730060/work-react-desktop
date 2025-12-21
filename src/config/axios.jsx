@@ -30,6 +30,14 @@ axiosInstance.interceptors.response.use(function (response) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     console.log('axios响应错误', error.response)
+    if (error.response.status == 401 || error.response.status == 500) {
+      if (location.pathname != '/login') {
+        // 401 跳转登录页
+        localStorage.removeItem('token');
+        location.href = '/login';
+        return Promise.reject(error);
+      }
+    }
     return Promise.reject(error);
   });
 
