@@ -21,6 +21,7 @@ export default function EditRole() {
         updateRoleApi({
             ID: id,
             name: values.name,
+            key: values.key,
             menuPermission: selectedKeys,
             comment: values.comment,
         }).then(res => {
@@ -72,6 +73,13 @@ export default function EditRole() {
                 name='name'
                 label='角色名称'
                 rules={[{ required: true, message: '请输入角色名称' }]}
+            >
+                <Input />
+            </Form.Item>
+            <Form.Item
+                name='key'
+                label='Key'
+                rules={[{ required: true, message: '请输入Key' }]}
             >
                 <Input />
             </Form.Item>

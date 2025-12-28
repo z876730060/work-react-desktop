@@ -23,7 +23,7 @@ export default function uploadPic() {
         render() {
             return (
                 <>
-                    <Modal open={isShow} onOk={ok} onCancel={cancel}>
+                    <Modal open={isShow} onOk={ok} onCancel={cancel} title="上传头像" okText="上传" cancelText="取消">
                         上传图片
                     </Modal>
                 </>

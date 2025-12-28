@@ -18,6 +18,7 @@ export default function AddRole() {
         try {
             const res = await addRoleApi({
                 name: values.name,
+                key: values.key,
                 menuPermission: selectedKeys,
             });
             if (res.code === 200) {
@@ -56,6 +57,9 @@ export default function AddRole() {
             onFinish={submit}
         >
             <Form.Item name="name" label="角色名称" rules={[{ required: true, message: '请输入角色名称' }]}>
+                <Input />
+            </Form.Item>
+            <Form.Item name="key" label="Key" rules={[{ required: true, message: '请输入Key' }]}>
                 <Input />
             </Form.Item>
             <Form.Item

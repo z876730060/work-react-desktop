@@ -47,12 +47,12 @@ function MyLayout() {
     <Layout className="layout">
     <Header>
       <div className="logo" />
-      <Row>
-        <Col span={20}><TopMenu /></Col>
-        <Col span={2}><Avatar style={{ backgroundColor: '#1677ff' }} size={40} onClick={toMe}>User</Avatar>{showExitBtn &&
-            <Button type="link" onClick={handleExit} >退出登录</Button>
-        }</Col>
-      </Row>
+      <p style={{margin: 0, width: '100%'}}>
+        <div style={{display: 'inline-block'}}><TopMenu /></div>
+        <div style={{display: 'inline-block', minWidth: 130, position: 'absolute', right: '100px'}}>{showExitBtn &&
+          <p style={{margin: 0}}><Avatar style={{ backgroundColor: '#1677ff' }} size={40} onClick={toMe}>User</Avatar><Button type="link" onClick={handleExit} >退出登录</Button></p>
+        }</div>
+      </p>
     </Header>
     <Content style={{ padding: '0' }}>
       <Breadcrumb style={{ margin: '5px 16px' }}>

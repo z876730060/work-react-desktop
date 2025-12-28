@@ -1,7 +1,7 @@
 import axiosInstance from './axios';
 import { lazy, Suspense } from 'react';
 import MyLayout from "@/page/common/Layout";
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router';
 import NotFound from "@/page/404/NotFound";
 import Login from "@/page/login/Login";
 import Register from "@/page/login/Register";

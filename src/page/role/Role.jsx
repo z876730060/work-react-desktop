@@ -56,6 +56,20 @@ export default function Role() {
             return Promise.resolve();
         },
     }, {
+        title: 'Key',
+        dataIndex: 'key',
+        key: 'key',
+        validator: (value) => {
+            // 判断value是否为空
+            if (!value.trim()) {
+                return Promise.reject('Key不能为空');
+            }
+            if (value.length > 10) {
+                return Promise.reject('Key不能超过10个字符');
+            }
+            return Promise.resolve();
+        },
+    }, {
         title: '备注',
         dataIndex: 'comment',
         key: 'comment'

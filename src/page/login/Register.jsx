@@ -19,14 +19,30 @@ export default function Register() {
 
     return (
         <div style={{
-            minHeight: '100vh',
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            height: '100vh',
+            background: `url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '20px'
+            padding: '20px',
+            position: 'relative',
+            overflow: 'hidden',
+            margin: 0
         }}>
-            <Row gutter={24} style={{ width: '100%', maxWidth: '1200px' }}>
+        {/* 背景遮罩 */}
+        <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)',
+            zIndex: 0
+        }}></div>
+            <Row gutter={24} style={{ width: '100%', maxWidth: '1200px', position: 'relative', zIndex: 1, maxHeight: '100%', alignItems: 'center' }}>
                 {/* 左侧宣传区域 */}
                 <Col xs={0} md={12} lg={14}>
                     <div style={{
